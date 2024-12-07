@@ -1,7 +1,6 @@
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, signOut, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
-import { getFirestore, addDoc, collection ,getDocs , doc, setDoc,updateDoc,serverTimestamp,arrayUnion, arrayRemove, deleteDoc,query,  orderBy,  onSnapshot,Timestamp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+import { getAuth , createUserWithEmailAndPassword ,signInWithEmailAndPassword , onAuthStateChanged , sendPasswordResetEmail, signOut } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+import { getFirestore ,collection, addDoc, getDocs , doc , deleteDoc, updateDoc , getDoc , query, where} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBUw8n6PVlRkb8g69uBpTWpNKF17Nz_IUc",
@@ -13,11 +12,11 @@ const firebaseConfig = {
     measurementId: "G-SCN6EP4DYS"
   };
 
+
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
 
-export { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, signOut, 
-    signInWithPopup, GoogleAuthProvider, db, addDoc, collection,getDocs , doc, setDoc,
-    updateDoc ,serverTimestamp,arrayUnion, arrayRemove , deleteDoc,query,  orderBy,  onSnapshot,Timestamp};
+export {auth ,createUserWithEmailAndPassword , signInWithEmailAndPassword , onAuthStateChanged , sendPasswordResetEmail, getFirestore , signOut , collection, addDoc , db, getDocs , doc , deleteDoc, updateDoc , getDoc , query, where} 
